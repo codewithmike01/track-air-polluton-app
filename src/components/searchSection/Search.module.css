@@ -1,0 +1,19 @@
+.padh4 {
+  padding: 7px 0 15px 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.item_grid {
+  height: 150px;
+  text-align: right;
+  border: 2px solid green;
+}
+
+.nav {
+  color: white;
+  text-decoration: none;
+}

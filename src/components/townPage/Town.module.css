@@ -1,0 +1,52 @@
+.contianer {
+  padding-top: 10px;
+}
+
+.row_marker {
+  display: flex;
+  padding: 15px 0 0 10px;
+  gap: 20px;
+}
+
+.table_container {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.table_container div {
+  flex-grow: 1;
+}
+
+.grid_column {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.space {
+  margin-right: 20px;
+}
+
+.risk_rate {
+  font-size: 2em;
+  width: 70%;
+  text-align: center;
+  margin: 27px auto;
+}
+
+.gas_info {
+  display: flex;
+  align-items: center;
+}
+
+.head_gas_info {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.head_country {
+  font-weight: bold;
+  font-size: 1.1em;
+}

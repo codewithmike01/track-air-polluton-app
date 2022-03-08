@@ -1,0 +1,29 @@
+.contanier {
+  padding: 10px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left_side {
+  display: flex;
+  align-items: center;
+}
+
+.left_side_size {
+  font-size: 1.4em;
+  color: #fff;
+}
+
+.right_side {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon_gear {
+  font-size: 1.5em;
+}
