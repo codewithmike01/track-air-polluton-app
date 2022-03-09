@@ -6,6 +6,7 @@ const initialState = {
   loading: false,
   country: [],
   error: ' ',
+  regionName: ' ',
 };
 
 const FETCH_COUNTRY_REQUEST =
@@ -14,6 +15,7 @@ const FETCH_COUNTRY_SUCCESS =
   'track-air-pollution-app/Country/FETCH_COUNTRY_SUCCESS';
 const FETCH_COUNTRY_FAILURE =
   'track-air-pollution-app/Country/ FETCH_COUNTRY_FAILURE';
+const SET_REGION_NAME = 'track-air-pollution-app/Country/SET_REGION_NAME';
 
 const fetchCountryRequest = () => ({
   type: FETCH_COUNTRY_REQUEST,
@@ -29,6 +31,11 @@ const fetchCountryFailure = (payload) => ({
   payload,
 });
 
+const setRegionName = (payload) => ({
+  type: SET_REGION_NAME,
+  payload,
+});
+
 const country = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_COUNTRY_REQUEST:
@@ -38,40 +45,48 @@ const country = (state = initialState, action) => {
       };
     case FETCH_COUNTRY_SUCCESS:
       return {
+        ...state,
         loading: false,
         country: [action.payload],
         error: ' ',
       };
     case FETCH_COUNTRY_FAILURE:
       return {
+        ...state,
         loading: false,
         country: [],
         error: action.payload,
+      };
+    case SET_REGION_NAME:
+      return {
+        ...state,
+        regionName: action.payload,
       };
     default:
       return { ...state };
   }
 };
 
-export const fecthCountry =
-  (region = 'europe') =>
-  async (dispatch) => {
-    try {
-      dispatch(fetchCountryRequest());
-      const response = await fetch(
-        `https://restcountries.com/v3.1/region/${region}`
-      );
-      const data = await response.json();
-      // console.log(data);
+export const fecthCountry = (region) => async (dispatch) => {
+  try {
+    dispatch(setRegionName(region));
+    dispatch(fetchCountryRequest());
+    const response = await fetch(
+      `https://restcountries.com/v3.1/region/${region}`
+    );
+    const data = await response.json();
+    // console.log(data);
 
-      const result = data.map((item) => ({
-        name: item.name.common,
-        latlag: item.latlng,
-      }));
-      dispatch(fetchCountrySuccess(result));
-    } catch {
-      fetchCountryFailure('Can not reach server');
-    }
-  };
+    const result = data.map((item) => ({
+      name: item.name.common,
+      latlag: item.latlng,
+      code: item.altSpellings[0].toLowerCase(),
+      population: item.population,
+    }));
+    dispatch(fetchCountrySuccess(result));
+  } catch {
+    fetchCountryFailure('Can not reach server');
+  }
+};
 
 export default country;

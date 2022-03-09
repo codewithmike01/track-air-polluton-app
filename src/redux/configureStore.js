@@ -3,11 +3,11 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import country from './Country/countries';
-import townReducer from './Town/town';
+import pollutionReducer from './POLLUTION/pollution';
 
 const rootReducer = combineReducers({
   country_name: country,
-  pollution: townReducer,
+  pollution: pollutionReducer,
 });
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk, logger)));

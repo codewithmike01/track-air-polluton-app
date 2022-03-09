@@ -8,12 +8,30 @@
 }
 
 .item_grid {
-  height: 150px;
+  height: 100%;
   text-align: right;
-  border: 2px solid green;
+  padding: 5px 5px 15px 7px;
+  border: 2px solid rgb(26, 56, 114);
 }
 
 .nav {
   color: white;
   text-decoration: none;
+}
+
+.img_container {
+  width: 120px;
+}
+
+.img_container img {
+  width: 100%;
+  height: 100%;
+}
+
+.spinner {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  border-color: red;
+  border: 2px solid;
 }

@@ -3,12 +3,21 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable operator-linebreak */
 /* eslint-disable react/jsx-one-expression-per-line */
-import React from 'react';
-// import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import town from './Town.module.css';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { fecthPollution } from '../../redux/POLLUTION/pollution';
+import pollution from './PollutionData.module.css';
 
-const Town = () => {
+const PollutionData = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const name = id.split(':');
+  const latlag = name[0].split(',');
+  useEffect(() => {
+    dispatch(fecthPollution(latlag, name[1]));
+  }, [id]);
+
   const airRiskRate = (rate) => {
     switch (rate) {
       case 1:
@@ -39,52 +48,55 @@ const Town = () => {
 
   const gasContent = storeTest
     ? gas.map((item, index) => (
-        <div key={index} className={town.table_container}>
-          <div className={town.gas_info}>
+        <div key={index} className={pollution.table_container}>
+          <div className={pollution.gas_info}>
             {' '}
-            <div className={town.space}> Carbon monoxide ( CO ) </div>{' '}
-            {item.gasRate.co}{' '}
+            <div className={pollution.space}> Carbon monoxide ( CO ) </div>{' '}
+            {item.gasRate.co}
           </div>
-          <div className={town.gas_info}>
+          <div className={pollution.gas_info}>
             {' '}
-            <div className={town.space}>
+            <div className={pollution.space}>
               {' '}
               Ammonia ( NH <sub>3</sub> ){' '}
             </div>{' '}
             {item.gasRate.nh3}{' '}
           </div>
-          <div className={town.gas_info}>
+          <div className={pollution.gas_info}>
             {' '}
-            <div className={town.space}> Nitrogen monoxide ( NO )</div>{' '}
+            <div className={pollution.space}>
+              {' '}
+              Nitrogen monoxide ( NO )
+            </div>{' '}
             {item.gasRate.no}{' '}
           </div>
-          <div className={town.gas_info}>
+          <div className={pollution.gas_info}>
             {' '}
-            <div className={town.space}>
+            <div className={pollution.space}>
               {' '}
               Nitrogen dioxide ( NO <sub>2</sub> ){' '}
             </div>{' '}
             {item.gasRate.no2}{' '}
           </div>
-          <div className={town.gas_info}>
+          <div className={pollution.gas_info}>
             {' '}
-            <div className={town.space}>
+            <div className={pollution.space}>
               {' '}
               Ozone ( O <sub>3</sub> ){' '}
             </div>{' '}
             {item.gasRate.pm2_5}{' '}
           </div>
-          <div className={town.gas_info}>
+          <div className={pollution.gas_info}>
             {' '}
-            <div className={town.space}>
+            <div className={pollution.space}>
               {' '}
               Fine particles matter( PM2_5 )
             </div>{' '}
             {item.gasRate.pm10}{' '}
           </div>
-          <div className={town.gas_info}>
+          <div className={pollution.gas_info}>
             {' '}
-            <div className={town.space}>
+            <div className={pollution.space}>
               {' '}
               Coarse particulate matter ( PM_10 )
             </div>{' '}
@@ -94,20 +106,20 @@ const Town = () => {
       ))
     : 'Country data is not yet avialable on server !';
   return (
-    <div className={town.contianer}>
-      <div className={town.head_gas_info}>
+    <div className={pollution.contianer}>
+      <div className={pollution.head_gas_info}>
         {' '}
-        <span className={town.head_country}>{gasVolume.name}</span> air
+        <span className={pollution.head_country}>{gasVolume.name}</span> air
         pollution ( μg/m3 ) stats - 2022
       </div>
-      <div className={town.grid_column}>
-        <div className={town.row_marker}>{gasContent}</div>
+      <div className={pollution.grid_column}>
+        <div className={pollution.row_marker}>{gasContent}</div>
       </div>
-      <div className={town.risk_rate}>
+      <div className={pollution.risk_rate}>
         Rate: {storeTest ? airRate : 'Unknown'}
       </div>
     </div>
   );
 };
 
-export default Town;
+export default PollutionData;

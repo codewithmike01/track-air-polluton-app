@@ -9,22 +9,25 @@ const initialState = {
 
 const baseUrl = 'http://api.openweathermap.org/data/2.5/air_pollution?';
 
-const FETCH_TOWN_REQUEST = 'track-air-pollution-app/town/FETCH_TOWN_REQUEST';
-const FETCH_TOWN_SUCCESS = 'track-air-pollution-app/town/FETCH_TOWN_SUCCESS';
-const FETCH_TOWN_FAILURE = 'track-air-pollution-app/town/FETCH_TOWN_FAILURE';
+const FETCH_POLLUTION_REQUEST =
+  'track-air-pollution-app/town/FETCH_POLLUTION_REQUEST';
+const FETCH_POLLUTION_SUCCESS =
+  'track-air-pollution-app/town/FETCH_POLLUTION_SUCCESS';
+const FETCH_POLLUTION_FAILURE =
+  'track-air-pollution-app/town/FETCH_POLLUTION_FAILURE';
 const SET_COUNTRY_NAME = 'track-air-pollution-app/town/SET_COUNTRY_NAME ';
 
-const fetchTownRequest = () => ({
-  type: FETCH_TOWN_REQUEST,
+const fetchPollutionRequest = () => ({
+  type: FETCH_POLLUTION_REQUEST,
 });
 
-const fetchTownSuccess = (payload) => ({
-  type: FETCH_TOWN_SUCCESS,
+const fetchPollutionSuccess = (payload) => ({
+  type: FETCH_POLLUTION_SUCCESS,
   payload,
 });
 
-const fetchTownFailure = (payload) => ({
-  type: FETCH_TOWN_FAILURE,
+const fetchPollutionFailure = (payload) => ({
+  type: FETCH_POLLUTION_FAILURE,
   payload,
 });
 
@@ -33,21 +36,21 @@ const setCountryName = (payload) => ({
   payload,
 });
 
-const townReducer = (state = initialState, action) => {
+const pollutionReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_TOWN_REQUEST:
+    case FETCH_POLLUTION_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case FETCH_TOWN_SUCCESS:
+    case FETCH_POLLUTION_SUCCESS:
       return {
         ...state,
         loading: false,
         gas: [action.payload],
         error: ' ',
       };
-    case FETCH_TOWN_FAILURE:
+    case FETCH_POLLUTION_FAILURE:
       return {
         ...state,
         loading: false,
@@ -63,9 +66,9 @@ const townReducer = (state = initialState, action) => {
       return { ...state };
   }
 };
-export const fecthTown = (cord, name) => async (dispatch) => {
+export const fecthPollution = (cord, name) => async (dispatch) => {
   try {
-    dispatch(fetchTownRequest());
+    dispatch(fetchPollutionRequest());
     dispatch(setCountryName(name));
     const response = await fetch(
       `${baseUrl}lat=${cord[0]}&lon=${cord[1]}&appid=9e828e2624199c7cbb9d9cde2d3b483c`
@@ -75,10 +78,10 @@ export const fecthTown = (cord, name) => async (dispatch) => {
       gasRate: data.list[0].components,
       rate: data.list[0].main.aqi,
     };
-    dispatch(fetchTownSuccess(result));
+    dispatch(fetchPollutionSuccess(result));
   } catch {
-    dispatch(fetchTownFailure('Data not available on server yet'));
+    dispatch(fetchPollutionFailure('Data not available on server yet'));
   }
 };
 
-export default townReducer;
+export default pollutionReducer;
