@@ -8,7 +8,7 @@ const initialState = {
   display: false,
 };
 
-const baseUrl = 'http://api.openweathermap.org/data/2.5/air_pollution?';
+const baseUrl = 'https://api.openweathermap.org/data/2.5/air_pollution?';
 
 const FETCH_POLLUTION_REQUEST =
   'track-air-pollution-app/town/FETCH_POLLUTION_REQUEST';
