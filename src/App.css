@@ -17,4 +17,7 @@ body {
   background-color: rgb(67, 105, 178);
   font-family: 'Lato', sans-serif;
   color: #fff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 770px;
 }
