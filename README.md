@@ -5,13 +5,16 @@
 > This is an app for tracking air pollution in a country and showing a chart of how dense the air pollution is
 
 <br> <br>
+![image](https://user-images.githubusercontent.com/58771507/157686729-960a6aa1-e2e1-4748-84e6-bfe399c0b033.png)
+
 
 ## Built With
 
 - React
 - Babel
 
-## Live Demo (Not avialiable yet)
+## Live Demo 
+[Live Link](https://air-pollution-tracker.herokuapp.com/)
 
 ## Getting Started
 
