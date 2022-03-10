@@ -5,6 +5,7 @@ import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { fecthCountry } from '../../redux/Country/countries';
+import { baseImgSrc } from '../globalUtilities/utility';
 import hero from './Hero.module.css';
 
 const HeroSection = () => {
@@ -24,22 +25,25 @@ const HeroSection = () => {
     dispatch(fecthCountry(regionPass));
   };
 
+  const pollution = useSelector((state) => state.pollution.display);
+
   const countries = useSelector((state) => state.country_name);
   const { country } = countries;
   const headName = countries.regionName;
 
   const headNameFormat = headName.charAt(0).toUpperCase() + headName.slice(1);
 
-  const imgSrc =
-    'https://raw.githubusercontent.com/Ginohmk/worldMaps/main/maps/';
   const regionSmallLetters = headName === 'americas' ? 'america' : headName;
 
   return (
     <div className={hero.container}>
-      <div className={hero.split_section}>
+      <div
+        className={hero.split_section}
+        style={pollution ? { display: 'none' } : { display: 'flex' }}
+      >
         <div className={hero.left}>
           <img
-            src={`${imgSrc}/${regionSmallLetters}/vector.svg`}
+            src={`${baseImgSrc}/${regionSmallLetters}/vector.svg`}
             alt="map"
             className={hero.image}
           />
@@ -52,7 +56,7 @@ const HeroSection = () => {
           </span>
           <form className={hero.form_style}>
             <select name="selected" ref={selectRef} onChange={setRefState}>
-              <option>{headNameFormat}</option>
+              <option>{headNameFormat} * </option>
               <option value="Asia"> Asia</option>
               <option value="Oceania">Oceania </option>
               <option value="Europe"> Europe </option>

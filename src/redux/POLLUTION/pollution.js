@@ -5,6 +5,7 @@ const initialState = {
   gas: [],
   name: ' ',
   error: ' ',
+  display: false,
 };
 
 const baseUrl = 'http://api.openweathermap.org/data/2.5/air_pollution?';
@@ -15,7 +16,8 @@ const FETCH_POLLUTION_SUCCESS =
   'track-air-pollution-app/town/FETCH_POLLUTION_SUCCESS';
 const FETCH_POLLUTION_FAILURE =
   'track-air-pollution-app/town/FETCH_POLLUTION_FAILURE';
-const SET_COUNTRY_NAME = 'track-air-pollution-app/town/SET_COUNTRY_NAME ';
+const SET_COUNTRY_NAME = 'track-air-pollution-app/town/SET_COUNTRY_NAME';
+const DISPLAY_COUNTRY_MAP = 'track-air-pollution-app/town/DISPLAY_COUNTRY_MAP';
 
 const fetchPollutionRequest = () => ({
   type: FETCH_POLLUTION_REQUEST,
@@ -33,6 +35,11 @@ const fetchPollutionFailure = (payload) => ({
 
 const setCountryName = (payload) => ({
   type: SET_COUNTRY_NAME,
+  payload,
+});
+
+export const displayCountryMap = (payload) => ({
+  type: DISPLAY_COUNTRY_MAP,
   payload,
 });
 
@@ -61,6 +68,11 @@ const pollutionReducer = (state = initialState, action) => {
       return {
         ...state,
         name: action.payload,
+      };
+    case DISPLAY_COUNTRY_MAP:
+      return {
+        ...state,
+        display: action.payload,
       };
     default:
       return { ...state };

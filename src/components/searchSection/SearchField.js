@@ -5,10 +5,10 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { css } from '@emotion/react';
-import { NavLink, useParams } from 'react-router-dom';
 import BounceLoader from 'react-spinners/BounceLoader';
-
+import { NavLink, useParams } from 'react-router-dom';
+import { color, override, baseImgSrc } from '../globalUtilities/utility';
+import { displayCountryMap } from '../../redux/POLLUTION/pollution';
 import { fecthCountry } from '../../redux/Country/countries';
 import search from './Search.module.css';
 
@@ -25,16 +25,18 @@ const SearchField = () => {
     }
   }, []);
 
-  const baseImgSrc =
-    'https://raw.githubusercontent.com/Ginohmk/worldMaps/main/maps';
+  const setDisplay = () => {
+    dispatch(displayCountryMap(true));
+  };
 
   const countryField =
     country.length !== 0
       ? country[0].map((field, index) => (
           <NavLink
-            to={`/pollution/${field.latlag}:${field.name}`}
+            to={`/pollution/${field.latlag}:${field.name}:${field.code}`}
             className={search.nav}
             key={index}
+            onClick={setDisplay}
           >
             <div className={search.item_grid}>
               <div className={search.img_container}>
@@ -51,12 +53,6 @@ const SearchField = () => {
           </NavLink>
         ))
       : ' ';
-  const color = '#56deff';
-
-  const override = css`
-    display: block;
-    margin: 4em auto;
-  `;
 
   return (
     <div className={search.contianer}>

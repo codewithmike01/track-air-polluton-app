@@ -27,3 +27,9 @@
 .icon_gear {
   font-size: 1.5em;
 }
+
+.button_style {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
