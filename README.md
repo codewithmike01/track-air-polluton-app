@@ -17,7 +17,7 @@
 [Live Link](https://air-pollution-tracker.herokuapp.com/)
 
 ## Live Video
-[Link to Video](https://drive.google.com/drive/my-drive?zx=409f9u893dt9)
+[Link to Video](https://drive.google.com/file/d/1iAmJkJk9HLONWYGtILpSyGYHkLoK5gmY/view?usp=sharing)
 
 ## Getting Started
 
