@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero Component Render Snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="split_section"
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    <div
+      className="left"
+    >
+      <img
+        alt="map"
+        className="image"
+        src="https://raw.githubusercontent.com/Ginohmk/worldMaps/main/maps// /vector.svg"
+      />
+    </div>
+    <div
+      className="right"
+    >
+      <p
+        data-testid="header_name"
+      >
+         
+      </p>
+      <span>
+         
+         
+         countries
+         
+      </span>
+      <form
+        className="form_style"
+      >
+        <select
+          name="selected"
+          onChange={[Function]}
+        >
+          <option>
+             
+             * 
+          </option>
+          <option
+            value="Asia"
+          >
+             Asia
+          </option>
+          <option
+            value="Oceania"
+          >
+            Oceania 
+          </option>
+          <option
+            value="Europe"
+          >
+             Europe 
+          </option>
+          <option
+            value="Americas"
+          >
+             Americas
+          </option>
+          <option
+            value="Africa"
+          >
+             Africa
+          </option>
+        </select>
+        <a
+          className=""
+          href="/country/Europe"
+          onClick={[Function]}
+        >
+          <button
+            data-testid="button"
+            type="button"
+          >
+             
+            Search Region
+          </button>
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+`;

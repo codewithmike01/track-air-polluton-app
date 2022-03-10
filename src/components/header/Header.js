@@ -17,10 +17,17 @@ const Header = () => {
   return (
     <div className={header.contanier}>
       <div className={header.left_side}>
-        <button type="button" onClick={setDisplay} className={header.button_style}>
+        <button
+          type="button"
+          onClick={setDisplay}
+          className={header.button_style}
+        >
           <IoIosArrowBack className={header.left_side_size} />
         </button>
-        <span className={header.left_side_size}> 2022</span>
+        <span className={header.left_side_size} data-testid="year">
+          {' '}
+          2022
+        </span>
       </div>
       <h3>Most views</h3>
 

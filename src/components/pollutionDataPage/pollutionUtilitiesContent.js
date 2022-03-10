@@ -5,6 +5,12 @@
 
 import pollution from './PollutionData.module.css';
 
+export const spliter = (id) => {
+  const name = id.split(':');
+  const lat = name[0].split(',');
+  return { name, lat };
+};
+
 const pollutionContent = (storeTest, gas) => {
   const pollutionData = storeTest
     ? gas.map((item, index) => (

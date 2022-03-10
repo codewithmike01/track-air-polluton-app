@@ -6,7 +6,10 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import BounceLoader from 'react-spinners/BounceLoader';
 import { useSelector, useDispatch } from 'react-redux';
-import pollutionContent, { airRiskRate } from './pollutionUtilitiesContent';
+import pollutionContent, {
+  airRiskRate,
+  spliter,
+} from './pollutionUtilitiesContent';
 import { color, override, baseImgSrc } from '../globalUtilities/utility';
 import {
   fecthPollution,
@@ -18,8 +21,8 @@ import pollution from './PollutionData.module.css';
 const PollutionData = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const name = id.split(':');
-  const latlag = name[0].split(',');
+  const { name, lat } = spliter(id);
+  const latlag = lat;
   useEffect(() => {
     dispatch(fecthPollution(latlag, name[1]));
     dispatch(displayCountryMap(true));
@@ -49,7 +52,7 @@ const PollutionData = () => {
           />
         </div>
       </div>
-      <div className={pollution.head_gas_info}>
+      <div className={pollution.head_gas_info} data-testid="pollution_data">
         {' '}
         <span className={pollution.head_country}>{gasVolume.name}</span> air
         pollution ( μg/m3 ) stats - 2022

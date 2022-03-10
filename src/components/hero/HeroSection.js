@@ -49,7 +49,7 @@ const HeroSection = () => {
           />
         </div>
         <div className={hero.right}>
-          <p>{headNameFormat}</p>
+          <p data-testid="header_name">{headNameFormat}</p>
           <span>
             {' '}
             {country.length !== 0 ? country[0].length : ' '} countries{' '}
@@ -67,7 +67,10 @@ const HeroSection = () => {
               to={`/country/${region}`}
               onClick={(e) => handleFetchCountry(e)}
             >
-              <button type="button"> Search Region</button>
+              <button type="button" data-testid="button">
+                {' '}
+                Search Region
+              </button>
             </NavLink>
           </form>
         </div>

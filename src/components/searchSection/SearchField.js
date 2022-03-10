@@ -47,6 +47,7 @@ const SearchField = () => {
               </div>
               <div>
                 {' '}
+                {field.code}
                 {field.name} <div> Population: {field.population}</div>{' '}
               </div>
             </div>
@@ -56,7 +57,10 @@ const SearchField = () => {
 
   return (
     <div className={search.contianer}>
-      <h4 className={search.padh4}> STATES BY COUNTRY </h4>
+      <h4 className={search.padh4} data-testid="search">
+        {' '}
+        STATES BY COUNTRY{' '}
+      </h4>
       <div className={search.grid}>{countryField}</div>
       <BounceLoader color={color} css={override} loading={loading} size={60} />
     </div>

@@ -17,21 +17,21 @@ const FETCH_COUNTRY_FAILURE =
   'track-air-pollution-app/Country/ FETCH_COUNTRY_FAILURE';
 const SET_REGION_NAME = 'track-air-pollution-app/Country/SET_REGION_NAME';
 
-const fetchCountryRequest = () => ({
+export const fetchCountryRequest = () => ({
   type: FETCH_COUNTRY_REQUEST,
 });
 
-const fetchCountrySuccess = (payload) => ({
+export const fetchCountrySuccess = (payload) => ({
   type: FETCH_COUNTRY_SUCCESS,
   payload,
 });
 
-const fetchCountryFailure = (payload) => ({
+export const fetchCountryFailure = (payload) => ({
   type: FETCH_COUNTRY_FAILURE,
   payload,
 });
 
-const setRegionName = (payload) => ({
+export const setRegionName = (payload) => ({
   type: SET_REGION_NAME,
   payload,
 });
@@ -75,7 +75,6 @@ export const fecthCountry = (region) => async (dispatch) => {
       `https://restcountries.com/v3.1/region/${region}`
     );
     const data = await response.json();
-    // console.log(data);
 
     const result = data.map((item) => ({
       name: item.name.common,

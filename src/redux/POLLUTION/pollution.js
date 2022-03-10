@@ -23,7 +23,7 @@ const fetchPollutionRequest = () => ({
   type: FETCH_POLLUTION_REQUEST,
 });
 
-const fetchPollutionSuccess = (payload) => ({
+export const fetchPollutionSuccess = (payload) => ({
   type: FETCH_POLLUTION_SUCCESS,
   payload,
 });
