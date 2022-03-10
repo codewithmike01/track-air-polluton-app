@@ -47,7 +47,6 @@ const SearchField = () => {
               </div>
               <div>
                 {' '}
-                {field.code}
                 {field.name} <div> Population: {field.population}</div>{' '}
               </div>
             </div>
