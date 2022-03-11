@@ -17,6 +17,7 @@
 [Live Link](https://air-pollution-tracker.herokuapp.com/)
 
 ## Live Video
+
 [Link to Video](https://drive.google.com/file/d/1iAmJkJk9HLONWYGtILpSyGYHkLoK5gmY/view?usp=sharing)
 
 ## Getting Started
@@ -67,11 +68,6 @@ Original design idea by [Nelson Sakwa on Behance..](https://www.behance.net/gall
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
 
 ## 📝 License
 
