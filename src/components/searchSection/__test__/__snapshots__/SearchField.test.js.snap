@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero Component Snapshot Pollution 1`] = `
+<div
+  className="contianer"
+>
+  <h4
+    className="padh4"
+    data-testid="search"
+  >
+     
+    STATES BY COUNTRY
+     
+  </h4>
+  <div
+    className="grid"
+  >
+     
+  </div>
+  <span
+    className="css-1kucby6"
+  >
+    <span
+      className="css-aqo0ng"
+    />
+    <span
+      className="css-tew9dq"
+    />
+  </span>
+</div>
+`;
