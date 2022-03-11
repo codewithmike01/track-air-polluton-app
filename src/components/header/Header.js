@@ -39,6 +39,4 @@ const Header = () => {
   );
 };
 
-// goBack() - (function) Equivalent to go(-1)
-
 export default Header;

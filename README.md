@@ -7,13 +7,13 @@
 <br> <br>
 ![image](https://user-images.githubusercontent.com/58771507/157686729-960a6aa1-e2e1-4748-84e6-bfe399c0b033.png)
 
-
 ## Built With
 
 - React
 - Babel
 
-## Live Demo 
+## Live Demo
+
 [Live Link](https://air-pollution-tracker.herokuapp.com/)
 
 ## Getting Started
@@ -56,6 +56,10 @@ To get a local copy up and running follow these simple example steps.
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/Ginohmk/calculator-UsingReact/issues)
+
+## Acknowledgement
+
+Original design idea by [Nelson Sakwa on Behance..](https://www.behance.net/gallery/31579789/Ballhead-App-%28Free-PSDs%29) Under the [Creative Commons License](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## Show your support
 
