@@ -1,11 +1,12 @@
 .contanier {
   padding: 10px;
+  padding-top: 1em;
   font-weight: bold;
   width: 100%;
-  max-width: 1024px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(11, 33, 73);
 }
 
 .left_side {
@@ -14,8 +15,17 @@
 }
 
 .left_side_size {
-  font-size: 1.4em;
   color: #fff;
+}
+
+.left_side_arrow {
+  color: #fff;
+  font-size: 2.6em;
+  cursor: pointer;
+}
+
+.left_side_text {
+  font-size: 1.7em;
 }
 
 .right_side {

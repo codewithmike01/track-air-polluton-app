@@ -1,5 +1,3 @@
-/* eslint-disable comma-dangle */
-/* eslint-disable operator-linebreak */
 const initialState = {
   loading: false,
   gas: [],
@@ -10,12 +8,9 @@ const initialState = {
 
 const baseUrl = 'https://api.openweathermap.org/data/2.5/air_pollution?';
 
-const FETCH_POLLUTION_REQUEST =
-  'track-air-pollution-app/town/FETCH_POLLUTION_REQUEST';
-const FETCH_POLLUTION_SUCCESS =
-  'track-air-pollution-app/town/FETCH_POLLUTION_SUCCESS';
-const FETCH_POLLUTION_FAILURE =
-  'track-air-pollution-app/town/FETCH_POLLUTION_FAILURE';
+const FETCH_POLLUTION_REQUEST = 'track-air-pollution-app/town/FETCH_POLLUTION_REQUEST';
+const FETCH_POLLUTION_SUCCESS = 'track-air-pollution-app/town/FETCH_POLLUTION_SUCCESS';
+const FETCH_POLLUTION_FAILURE = 'track-air-pollution-app/town/FETCH_POLLUTION_FAILURE';
 const SET_COUNTRY_NAME = 'track-air-pollution-app/town/SET_COUNTRY_NAME';
 const DISPLAY_COUNTRY_MAP = 'track-air-pollution-app/town/DISPLAY_COUNTRY_MAP';
 
@@ -83,7 +78,7 @@ export const fecthPollution = (cord, name) => async (dispatch) => {
     dispatch(fetchPollutionRequest());
     dispatch(setCountryName(name));
     const response = await fetch(
-      `${baseUrl}lat=${cord[0]}&lon=${cord[1]}&appid=9e828e2624199c7cbb9d9cde2d3b483c`
+      `${baseUrl}lat=${cord[0]}&lon=${cord[1]}&appid=9e828e2624199c7cbb9d9cde2d3b483c`,
     );
     const data = await response.json();
     const result = {

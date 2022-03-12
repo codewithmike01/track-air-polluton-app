@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-indent */
-/* eslint-disable operator-linebreak */
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -52,11 +49,19 @@ const HeroSection = () => {
           <p data-testid="header_name">{headNameFormat}</p>
           <span>
             {' '}
-            {country.length !== 0 ? country[0].length : ' '} countries{' '}
+            {country.length !== 0 ? country[0].length : ' '}
+            {' '}
+            countries
+            {' '}
           </span>
           <form className={hero.form_style}>
             <select name="selected" ref={selectRef} onChange={setRefState}>
-              <option>{headNameFormat} * </option>
+              <option>
+                {headNameFormat}
+                {' '}
+                *
+                {' '}
+              </option>
               <option value="Asia"> Asia</option>
               <option value="Oceania">Oceania </option>
               <option value="Europe"> Europe </option>

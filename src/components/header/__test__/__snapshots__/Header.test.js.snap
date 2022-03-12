@@ -13,7 +13,7 @@ exports[`Header component test Header SnapShot 1`] = `
       type="button"
     >
       <svg
-        className="left_side_size"
+        className="left_side_arrow"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -33,7 +33,7 @@ exports[`Header component test Header SnapShot 1`] = `
       </svg>
     </button>
     <span
-      className="left_side_size"
+      className="left_side_text"
       data-testid="year"
     >
        

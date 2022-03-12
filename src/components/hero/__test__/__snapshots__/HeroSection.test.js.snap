@@ -32,7 +32,8 @@ exports[`Hero Component Render Snapshot 1`] = `
       <span>
          
          
-         countries
+         
+        countries
          
       </span>
       <form
@@ -44,7 +45,9 @@ exports[`Hero Component Render Snapshot 1`] = `
         >
           <option>
              
-             * 
+             
+            *
+             
           </option>
           <option
             value="Asia"
