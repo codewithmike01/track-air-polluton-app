@@ -22,9 +22,9 @@ const Header = () => {
           onClick={setDisplay}
           className={header.button_style}
         >
-          <IoIosArrowBack className={header.left_side_size} />
+          <IoIosArrowBack className={header.left_side_arrow} />
         </button>
-        <span className={header.left_side_size} data-testid="year">
+        <span className={header.left_side_text} data-testid="year">
           {' '}
           2022
         </span>

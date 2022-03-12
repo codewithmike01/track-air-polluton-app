@@ -3,12 +3,28 @@
   width: 100%;
   height: 180px;
   margin-bottom: 20px;
+  padding: 20px 0;
 }
 
 .image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: scale-down;
+  filter: brightness(0) invert(1);
+}
+
+.left img {
+  animation: rotateMap 2s ease-in;
+}
+
+@keyframes rotateMap {
+  from {
+    transform: rotate(0deg) scale(0);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 .split_section {
@@ -49,6 +65,10 @@
   padding: 4px;
   outline: none;
   width: 100%;
+}
+
+.form_style button {
+  cursor: pointer;
 }
 
 .form_style select option:first-child {
